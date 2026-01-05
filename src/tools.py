@@ -112,28 +112,25 @@ def get_weather(fecha: str) -> Dict[str, Any]:
 # OpenAI tool schema builder
 # ---------------------------
 
-def get_tools_schema() -> List[Dict[str, Any]]:
+def get_tools_schema():
     """
-    Return the tools list to pass into OpenAI responses/chat call.
-    Using a JSON schema compatible with tool calling.
+    Tools schema for OpenAI Responses API.
     """
     return [
         {
             "type": "function",
-            "function": {
-                "name": "get_weather",
-                "description": "Devuelve una predicción del tiempo para una fecha dada (YYYY-MM-DD).",
-                "parameters": {
-                    "type": "object",
-                    "properties": {
-                        "fecha": {
-                            "type": "string",
-                            "description": "Fecha en formato ISO (YYYY-MM-DD).",
-                        }
-                    },
-                    "required": ["fecha"],
-                    "additionalProperties": False,
+            "name": "get_weather",
+            "description": "Devuelve una predicción del tiempo para una fecha dada (YYYY-MM-DD).",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fecha": {
+                        "type": "string",
+                        "description": "Fecha en formato ISO (YYYY-MM-DD).",
+                    }
                 },
+                "required": ["fecha"],
+                "additionalProperties": False,
             },
         }
     ]

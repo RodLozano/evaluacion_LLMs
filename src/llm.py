@@ -30,17 +30,20 @@ def get_default_model() -> str:
 
 def get_default_params() -> Dict[str, Any]:
     """
-    Default generation params. You can override per call.
+    Default generation params for OpenAI Responses API.
+    You can override per call.
     """
     temperature = float(os.getenv("OPENAI_TEMPERATURE", "0.2"))
-    max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", "512"))
+    max_output_tokens = int(os.getenv("OPENAI_MAX_TOKENS", "512"))
 
     # top_p is optional; if not set, omit it
     top_p_raw = os.getenv("OPENAI_TOP_P")
+
     params: Dict[str, Any] = {
         "temperature": temperature,
-        "max_tokens": max_tokens,
+        "max_output_tokens": max_output_tokens,
     }
+
     if top_p_raw is not None and top_p_raw != "":
         params["top_p"] = float(top_p_raw)
 
