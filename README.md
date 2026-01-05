@@ -1,16 +1,18 @@
-# evaluacion_LLMs
-
 # Asistente Turístico con LLM (RAG + Multiturno + Function Calling)
 
-Proyecto final de la asignatura **Large Language Models** (Máster en IA, Cloud Computing y DevOps).  
-El objetivo es construir un **asistente turístico reproducible** usando un **LLM comercial vía API** (p. ej. OpenAI GPT-4o o Google Gemini), integrando:
+Proyecto final de la asignatura **Large Language Models**  
+Máster en Inteligencia Artificial, Cloud Computing y DevOps.
 
-- **RAG** sobre una guía turística proporcionada por el profesorado (chunking + embeddings + vector store).
-- **Diálogo multiturno** que mantenga el contexto de conversación y gestione el límite de tokens.
-- **Function calling** obligatorio: `get_weather(fecha)` con **manejo básico de errores** y **registro en log**.
+Este repositorio contiene un **prototipo reproducible de asistente turístico** construido sobre un **LLM comercial (OpenAI)** que integra:
 
-> Todo debe quedar integrado en un **único notebook principal**, con flujo claro y documentación. :contentReference[oaicite:1]{index=1}
+- **RAG (Retrieval-Augmented Generation)** sobre una guía turística en PDF.
+- **Diálogo multiturno** con gestión explícita de memoria y control de longitud del contexto.
+- **Function calling obligatorio** mediante la herramienta `get_weather(fecha)`, con manejo de errores y logging.
+- **Evaluación básica** mediante prompts reproducibles y visualización de métricas.
 
+Todo el flujo está integrado y orquestado desde **un único notebook principal**.
+
+---
 ---
 
 ## Estructura del repositorio
@@ -34,6 +36,16 @@ El objetivo es construir un **asistente turístico reproducible** usando un **LL
 ├─ .gitignore
 └─ README.md
 ```
+
+---
+
+## ⚙️ Requisitos
+
+- Python **3.10+**
+- Acceso a la **API de OpenAI** (facturación activa)
+- Entorno probado en Windows con **VS Code + Jupyter**
+
+---
 
 Entregables requeridos:
 - **Repositorio** con estructura clara, README detallado, `requirements.txt` o `pyproject.toml` y `.gitignore`.
