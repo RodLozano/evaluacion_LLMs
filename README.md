@@ -15,7 +15,7 @@ El objetivo es construir un **asistente turístico reproducible** usando un **LL
 
 ## Estructura del repositorio
 
-'''text
+``` text
 .
 ├─ notebooks/
 │  └─ main.ipynb              # Notebook principal con todo el flujo del proyecto
@@ -33,7 +33,7 @@ El objetivo es construir un **asistente turístico reproducible** usando un **LL
 ├─ .env.example               # Ejemplo de variables de entorno (API keys)
 ├─ .gitignore
 └─ README.md
-'''
+```
 
 Entregables requeridos:
 - **Repositorio** con estructura clara, README detallado, `requirements.txt` o `pyproject.toml` y `.gitignore`.
